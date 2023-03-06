@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>이벤트 리스너 속성에 자바스크립트 코드</title>
+<script type="text/javascript">
+	function show(){
+		document.location.href='script3.html'
+	}
+
+	let ret = confirm("전송할까요");
+	if(ret == true) {
+	// 사용자가 "확인" 버튼을 누른 경우
+	alert('yse'+ret)
+	}
+	else {
+	// 취소 버튼이나 다이얼로그를 닫은 경우
+	alert('no'+ret)
+	}
+
+</script>
+</head>
+<body>
+<h3>마우스 올려 보세요</h3>
+<hr>
+<img src="/Bit/img/b1.jpg" alt="이미지" 
+onmouseover="this.src='/Bit/img/b2.jpg'"
+onmouseout="this.src='/Bit/img/b1.jpg'">
+<h3>링크의 href에 자바스크립트 작성</h3>
+<hr>
+<a href="javascript:alert('클릭하셨어요?')">
+클릭해보세요1</a>
+
+<a href="javascript:show()">
+클릭해보세요2</a>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	function testParse(p){
+		var typeValue=typeof p;
+		if(typeValue=='number')
+			console.log(p+10);
+		else if(typeValue=='object' && Array.isArray(p)){
+			var total=0;
+			for(var i in p){
+				total+=p[i];
+			}
+			console.log('total='+total)
+		}else if(typeValue=='undefined'){
+			console.log('undefined')
+		}else if(typeValue=='function'){
+			p();
+		}else if(typeValue=='object'){
+			//console.log(p);
+			for(i in p){
+				console.log(i+":"+p[i]+" ")
+			}
+		}
+	}
+
+
+</script>
+</head>
+<body>
+
+<button onmouseover="testParse(100)">Fun1</button>
+<button onmouseover="testParse([1,7,8,9,56,5])">Fun2</button>
+<button onmouseover="testParse()">Fun3</button>
+<button onmouseover="testParse(function(){alert('executeFun')})">Fun4</button>
+<button onmouseover="testParse({name:'java', weight:'88.7', eye:'1.6'})">Fun5</button>
+
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+  
+  span{
+     background-color: yellow;
+     border: 2px solid blue;
+     padding: 10px;
+     margin: 10px;     
+  }
+</style>
+<script type="text/javascript">
+function functionDisp(state){
+	var spanNodes=document.getElementsByTagName("span");
+	var temp='N';
+	for(var i=0;i<spanNodes.length;i++){
+		switch(state){
+		case 'N':
+			temp='none';break;
+		case 'I':
+			temp='inline';break;
+		default:
+			temp='block';break;
+		}
+		spanNodes[i].style.display=temp;
+		spanNodes[i].style.color='green';
+	}
+	
+}
+</script>
+</head>
+<body>
+<hr color="red" size="5">
+<button onclick="functionDisp('N')">NONE</button>
+<button onclick="functionDisp('I')">INLINE</button>
+<button onclick="functionDisp('B')">BLOCK</button>
+<br><br>
+<span>SPAN1</span>
+<span>SPAN2</span>
+<span>SPAN3</span>
+<span>SPAN4</span>
+</body>
+</html>

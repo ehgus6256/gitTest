@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
+		http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-4.1.xsd">
+
+
+<bean id="person1" class="bit.com.web.di1.Person" scope="prototype" init-method="initPerson" destroy-method="destroyPerson"> <!-- scope의 default는 singleton -->
+<!-- setter injection setter가 있어야 구성 가능 -->  
+  <property name="name" value="정수현"></property>  <!-- set name=정수현 -->
+  <property name="age" value="22"></property>
+  <property name="height" value="178.7"></property>
+  
+</bean>
+<!-- namespace injection -->
+<bean id="person2" class="bit.com.web.di1.Person" scope="singleton" 
+p:name="김도현" p:age="22" p:height="190.5" p:weight="55.5" init-method="initPerson" destroy-method="destroyPerson"></bean>
+
+
+<bean id="person3" class="bit.com.web.di1.Person" scope="singleton" init-method="initPerson">
+  <constructor-arg name="name" value="방지환"></constructor-arg>
+  <constructor-arg name="age" value="22"></constructor-arg>
+  <constructor-arg name="height" value="180"></constructor-arg>
+  <constructor-arg name="weight" value="58.7"></constructor-arg>
+  
+</bean>  
+
+<bean id="pc" class="bit.com.web.di1.PersonCollection" scope="prototype">
+<property name="properties">  <!-- key|value 로 구성된 자료구조 -->
+  <props>   <!-- bit.com.web.di1.PersonCollection이 properties에 의존 -->
+    <prop key="211.123.456">정수현</prop>
+    <prop key="211.123.457">최남이</prop>
+    <prop key="211.123.458">이원복</prop>
+    <prop key="211.123.459">김도현</prop>
+    <prop key="211.123.460">심서영</prop>
+  </props>
+</property>
+<property name="set">
+  <set>
+    <ref bean="person1"/>
+    <ref bean="person2"/>
+    <ref bean="person3"/>
+    <ref bean="person1"/>
+    <ref bean="person3"/>
+    <ref bean="person1"/>
+    <ref bean="person2"/>
+    <ref bean="person1"/>
+    <ref bean="person3"/>
+  </set>
+</property>
+  <property name="list">
+    <list>
+      <ref bean="person1"/>
+      <ref bean="person2"/>
+      <ref bean="person3"/>
+      <ref bean="person1"/>
+    </list>
+  </property>
+  <property name="map">
+  	<map>
+  		<entry>
+  			<key>
+  				<value>1</value>
+  			</key>
+  			<ref bean="person1"/>
+  		</entry>
+  		<entry>
+  			<key>
+  				<value>2</value>
+  			</key>
+  			<ref bean="person2"/>
+  		</entry>
+  		<entry>
+  			<key>
+  				<value>3</value>
+  			</key>
+  			<ref bean="person3"/>
+  		</entry>
+  	</map>
+  </property>
+</bean>
+
+
+
+
+
+</beans>

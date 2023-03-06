@@ -1,0 +1,49 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>CSS Selector : Attribute Selector(속성선택자)</title>
+    <style>
+        div, p {
+            padding: 10px;
+            margin: 10px;
+        }
+        [title] {/*속성이 title인 node선택*/
+            background: yellow;
+            color: white;
+            font-weight: bold;
+        }
+        [title="two"] {/**/
+            border: 2px solid black;
+        }
+        p[title="two"] {/*NODE가 PELEMENT 이면서 속성이 title이면서 value가 two인 NODE SELECT*/
+            background: #0076ff;
+            color: #ffb100;
+        }
+        /* 속성값과 어떤 요소의 띄어쓰기로 구분된 속성값의 일치여부 */
+        p[title~="second"] {
+            background: #fc6aad;
+        }
+        p[class^="second"] {/* NODE가 p이면서 속성이 class인 노드중 속성값이 second로 시작하는 selector*/
+            background: #25d32c;
+        }
+        p[class$="wrap"] {/* NODE가 p이면서 속성이 class인 노드중 속성값이 wrap로 끝나는  selector*/
+            color: red;
+            font-weight: bold;
+        }
+        [class*="two"] {/*모든 노드 중 속성값이 class이면서 value가 two가 포함된 NODE selector*/
+            background: gray;
+            color:yellow;
+        }
+    </style>
+</head>
+<body>
+    <div title="one">selector[attribute name]</div>
+    <div title="two">selector[attribute name=value]</div>
+    <p title="two">selector[attribute name=value]</p>
+    <p title="first second third">selector[attribute name~=value]</p>
+    <p class="second-container">selector[attribute name^=value]</p>
+    <p class="second-wrap">selector[attribute name$=value]</p>
+    <div class="onetwothree">dfdf</div>
+</body>
+</html>

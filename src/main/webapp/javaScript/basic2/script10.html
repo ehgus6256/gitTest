@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/* let obj = new Object();
+	console.log(obj);
+	obj.name='수현';
+	obj.age=23;
+	obj.addr='경기도';
+	obj.say=function(){alert('sal')};
+	obj.show=function(){alert('show')};
+	
+	document.writeln('obj.name'+' '+obj['name']+' '+obj.name);
+	document.writeln('obj.age'+' '+obj['age']+' '+obj.age);
+	document.writeln('obj.addr'+' '+obj['addr']+' '+obj.addr);
+	obj.say();
+	obj.show(); */
+	
+	
+	let persons=[{no:1,name:['java','jova','jiva'],height:180.6},
+				{no:1,name:['java','jova','jiva'],height:180.6},
+				{no:1,name:['java','jova','jiva'],height:180.6},
+				{no:1,name:['java','jova','jiva'],height:180.6}
+				];  //배열안에 튜플
+	for(person in persons){
+		for(perjson in persons[person]){
+			console.log(perjson+":"+persons[person][perjson]);
+		}
+	}
+
+
+</script>
+</head>
+<body>
+
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+
+var m=[45,95,67,98,32];
+var imsi=0;
+
+for(var i=0 ; i<m.length-1 ; i++){
+	for(var j=i+1 ; j<m.length ; j++){
+		if(m[i] < m[j]){
+			imsi=m[i];
+			m[i]=m[j];
+			m[j]=imsi;
+		}
+	}
+}
+document.writeln(m+"<br>");
+
+while(i++<m.length-1){
+	while(j++<m.length){
+		if(m[i] < m[j]){
+			imsi=m[i];
+			m[i]=m[j];
+			m[j]=imsi;
+		}
+	}
+}
+
+
+document.writeln(m+"<br>");
+
+
+
+
+</script>
+<body>
+
+</body>
+</html>

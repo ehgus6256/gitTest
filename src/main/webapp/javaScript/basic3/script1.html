@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function Person(name){
+		console.log('person(name)');
+	}
+	function Person(name,age,addr,height){
+		console.log('person(name,age,addr,height)');
+		this.name=name;
+		this.age=age;
+		this.addr=addr;
+		this.height=height;
+	}
+	let p=new Person('원복',24,'과천시',178);
+	console.log(p);
+	
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>CSS Selector : Pseudo Selector(가상선택자)</title>
+    <style>
+        div {
+            font-weight: bold;
+        }
+
+        div, div p { /* div node와 div 자손 p node 그룹선택 */
+            padding: 10px;
+            margin: 10px;
+        }
+
+        div p {
+            border: 1px solid black;
+        }
+
+        div p:first-child {
+            background: #0076ff;
+            color: #ffb100;
+        }
+        div p:last-child {
+            background: #0076ff;
+            color: #ffb100;
+        }
+
+        div#content { /* div중에 id가 content */
+            background: #ffb100;
+            color: #0076ff;
+        }
+
+        div#content:before {
+            content: "blue";
+            color: black;
+            padding: 10px;
+            border: 1px solid black;
+        }
+        div#content:after {
+            content: "red";
+            color: red;
+            padding: 20px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>div 자손 p1 111</p>
+        <p>div 자손 p2 222</p>
+    </div>
+    <div id="content">ㅋㅋㅋ</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+   *{
+     color: red;
+   }
+   h1.a{
+     color:  blue;
+   }
+   h1#h1{
+      font-size: 7em;
+   }
+</style>
+<script type="text/javascript">
+  function showData(){
+	  document.getElementById("h1").innerHTML="";
+  }
+</script>
+</head>
+<body>
+
+  <h1 class="a" id="h1" onclick="showData()">Title 1</h1>
+  <h1 class="a" id="h2" onclick="showData()">Title 2</h1>
+  <p class="a" id="h1" onclick="showData()">PElement1</p>
+  <p class="a">PElement2</p>
+  <span class="a">SpanElement1</span>
+  <span class="a">SpanElement2</span>
+</body>
+
+</html>
+
+

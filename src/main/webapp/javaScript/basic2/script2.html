@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+/* 	function messageFuntion(param){
+		if(typeof param == 'function')param();
+		else
+			alert(param);
+	}
+
+	messageFuntion(function(){alert('testFun')});
+	messageFuntion('function(){alert(testFun)}'); */
+	
+	
+	
+	//INNER FUNCTION 테스트
+/* 	function outerFunction(state){
+		if(state==1){
+			return function(){
+				document.write('<H1>INNERFUN 1</H1>')
+			}
+		}
+		
+		if(state==2){
+			return function(){
+				document.write('<H1>INNERFUN 2</H1>')
+			}
+		}
+	}
+	
+	outerFunction(1)();
+	var result=outerFunction(2);
+	result(); */
+	
+	
+	function closerTest(num){   //내부함수에서 이미 종료된 외부함수를 사용하려할때 closer를 사용
+		var keep=num;
+		return function(){document.writeln("<h1>"+keep+"</h1>");}
+	}
+	
+	var result = closerTest();
+	result();
+	
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+/*   console.log("수행시작");//console
+  document.writeln("ㅋㅋㅋ<br>");//body
+  alert("자바스크립트를 공부해요");
+  document.writeln(100 + 200 + "<br>");  //body  연산되어 결과값인 300이 출력
+  document.writeln(100 > 200 + "<br>");  //관계를 파악하여 거짓이므로 false 출력 */
+  var v_test; //선언하지 않으면 기본값인 undefined로 설정
+  console.log(typeof v_test +" "+v_test);
+  v_test=80;
+  console.log(typeof v_test +" "+v_test);
+  v_test='안녕';
+  console.log(typeof(v_test) +" "+v_test);
+  v_test=5>3;
+  console.log(typeof(v_test) +" "+v_test);
+  console.log(typeof aa);  //->undifined 선언하지않아도 undifined
+  v_test=function(){alert('fun')};
+  console.log(typeof v_test);
+  v_test=[1,null,'abc',10.5]
+  console.log(typeof v_test);  //->object 타입
+  for(i in v_test){   //-> v_test의 값이 출력
+	console.log(v_test[i]);  
+  }
+  for(i in v_test){   //->1,2,3,4 출력
+	console.log(i);  
+  }
+  
+  
+  // v_test();  //->function함수의 alert 기능 호출
+  /* v_test=aa;    ->에러
+  console.log(typeof(v_test) +" "+v_test); */
+  
+  
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	var g_v="전역변수";   //gloval value
+	function myFun1(){   //local value
+		var l_v="myFun1의 지역변수"   
+		document.writeln("myFun1() Scope"+"<br>");
+		document.writeln("l_v:"+l_v+"<br>");
+		document.writeln("g_v"+g_v+"<br>");
+	}
+	var myFun2=function(){   
+		var l_v="myFun2()의 지역변수"   
+		document.writeln("myFun2() Scope"+"<br>");
+		document.writeln("l_v:"+l_v+"<br>");
+		document.writeln("g_v"+g_v+"<br>");
+	}
+	myFun1();
+	myFun2();
+	document.writeln("g_v"+g_v+"<br>");
+	document.writeln("l_v:"+l_v+"<br>");
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

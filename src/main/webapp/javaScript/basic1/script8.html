@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	console.log(myFun1);
+	console.log(myFun2);
+	//myFun1();  //익명함수는 호출의 순서가 늦어 선언위에 부르면 오류가 난다
+	myFun2();   //명시적함수는 호출의 순서가 빨라 선언위에 불러도 오류가 나지 않는다
+	var myFun1=function(){
+		document.write("익명함수");
+	}
+
+	function myFun2(){
+		document.write("명시적함수");
+	}
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

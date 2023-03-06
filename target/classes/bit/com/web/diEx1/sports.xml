@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd">
+
+<bean id="sports1" class="bit.com.web.diEx1.Sports" scope="prototype">
+<property name="name" value="soccer" ></property>
+<property name="runtime" value="90"></property>
+<property name="member" value="11"></property>
+<property name="league" value="epl"></property>
+</bean>
+
+<bean id="sports2" class="bit.com.web.diEx1.Sports" scope="singleton" 
+p:name="basketball" p:runtime="40" p:member="5" p:league="nba"></bean>
+
+<bean id="sports3" class="bit.com.web.diEx1.Sports" scope="prototype">
+   <constructor-arg name="name" value="baseball"></constructor-arg>
+   <constructor-arg name="runtime" value="80"></constructor-arg>
+   <constructor-arg name="member" value="9"></constructor-arg>
+   <constructor-arg name="league" value="mlb"></constructor-arg>
+   
+</bean>
+
+
+
+
+</beans>

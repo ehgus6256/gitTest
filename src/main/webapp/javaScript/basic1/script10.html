@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+/*  	function test(){
+		console.log('test()');
+	}
+	function test(x){
+		console.log('test(x)');
+	}
+	function test(x,y){
+		console.log('test(x,y)');
+	}
+	test();    */ //이름이 같으면 덮어쓰기 때문에 마지막에 선언된 함수를 선언함
+/* 	function show(x,y){
+		document.writeln("<h1>arguments.length="+arguments.length+"</h1>");  //받은 인자의 갯수
+		document.writeln("<h1>show.length="+show.length+"</h1>");  //기본 인자의 갯수
+		for(var i in arguments){
+			document.writeln("<h1>"+arguments[i]+"</h1>");
+		}
+		if(arguments.length==show.length){
+			document.location.href='script9.html';
+		}
+	}
+	
+	show(3,8,4,2,5,1,9,6,7); */   //arguments.length=9  따라서 9출력
+	//show(1,2)  ->arguments와show의 길이가 같으므로 script9.html로 이동
+
+	/* function messageFun(value){
+		if(arguments.length!=messageFun.length)
+			throw new Error("인수가 다릅니다"+arguments.length);
+		document.writeln(value);
+	} 
+	
+	messageFun('hello','hi');  */
+	
+	
+	 function sum(){
+		var result=0;
+		for(var i=0 ; i<arguments.length ; i++){  //전달인자(arguments)가 모여있는 데이터의 주소
+			var temp=arguments[i];
+			if(isNaN(temp)){   //NaN = not a number 숫자가 아니면 true 숫자면 false
+				throw new Error("지정한 숫자가 아니다"+temp);
+			}
+			result+=temp;
+		}
+		return result
+	}
+	
+	try{
+		document.writeln(sum(4,7,8));
+	}catch(e){
+		window.alert(e.massage);
+	}finally{
+		
+	} 
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

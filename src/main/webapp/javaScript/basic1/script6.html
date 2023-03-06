@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	var spNodes=document.getElementsByTagName("span");
+	var injection=function(obj){
+		if(obj.lang=='a'){
+			spNodes[0].innerHTML="<img src='/Bit/img/b1.jpg' width=200 height=200>"
+			spNodes[2].innerHTML="<img src='/Bit/img/b1.jpg' width=200 height=200>"
+		}else if(obj.lang=='b'){
+			spNodes[1].innerHTML="<img src='/Bit/img/b2.jpg' width=200 height=200>"
+			spNodes[3].innerHTML="<img src='/Bit/img/b2.jpg' width=200 height=200>"
+		}
+	}
+</script>
+
+
+</head>
+<body>
+
+<h1 onclick="injection(this)" lang="a">Heading1</h1>
+<h1 onclick="injection(this)" lang="b">Heading2</h1>
+<span>SP1</span><span>SP2</span><span>SP3</span><span>SP4</span>
+
+
+</body>
+</html>

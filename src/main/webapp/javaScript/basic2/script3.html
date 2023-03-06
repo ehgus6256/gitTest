@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	/* function action(){
+		lv=100;  //var를 빼면 지역변수가 아닌 전역변수이지만 action을 불러내야 전역변수 선언
+		alert('lv='+lv);
+	}
+	function process(){
+		alert('lv='+lv);
+	}
+	action();
+	process(); */  //lv가 action에서 선언되어 있기 때문에 process를 먼저 호출하면 오류
+	
+	//var는 선언한 순서대로 마지막 선언이 덮어씀
+	/* var a=100;
+	console.log(typeof(a)+a);
+	var a=10;
+	console.log(typeof(a)+a); */
+	
+	/* function action(){
+		alert('action()')
+	}
+	function action(value){
+		alert('action(value)')
+	}
+	action(); */  //action(value)가 마지막에 선언된 함수라서 action(value)가 호출됨
+	
+	
+	//var는 다중선언이 가능하지만 let은 다중선언이 불가능함 따라서 아래의 예제는 오류
+	/* let a=10;
+	console.log(a);
+	let a=10;
+	console.log(a); */
+	
+	/* const a=10;   //java의 final과 같은 함수
+	a=20;         //a가 const로 선언되어 있어서 추가로 a를 선언하면 오류
+	console.log(a); */
+	
+	
+	//호이스팅 : 변수선언/함수선언이 해당 스코프의 하단에 있어도 최상단으로 끌어 올려지는 현상
+			   //메모리 선언이 어디더라도 먼저 선언되고 함수호출
+	console.log(text);
+	text="hiText";
+	console.log(text);
+	var text="hi2Text";
+	
+	console.log(text);
+	let text="hiText";
+	console.log(text);
+	text="hi2Text";
+	
+	
+	
+	
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
